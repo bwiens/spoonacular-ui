@@ -2,6 +2,8 @@
 
 import requests
 import os
+import sys
+
 
 class SpoonacularUI(object):
 
@@ -9,7 +11,12 @@ class SpoonacularUI(object):
         self.api_url = 'https://api.spoonacular.com/'
         self.headers = {"Application": "spoonacular",
                         "Content-Type": "application/x-www-form-urlencoded"}
-        self.api_key = os.environ.get("API_KEY")
+        # check if an API Key has been set as an environment variable, exit if not
+        try:
+            self.api_key = os.environ['API_KEY']
+        except KeyError:
+            print('You must set the API key. See the README for setting it as an environment variable')
+            sys.exit(1)
 
     def select_ingredients(self):
         """

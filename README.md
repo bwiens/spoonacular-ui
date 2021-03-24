@@ -19,6 +19,13 @@ Run Spoonacular UI:
 
 Setup Spoonacular UI:
 
+Install the following Python libraries:
+
+```
+os
+requests
+```
+
 Add your API key to your environment variables to keep it secure by entering the following command in your shell:
 ```
 export API_KEY='<your key here>'
