@@ -41,3 +41,8 @@ determine_missing_ingredients
 display_cost_location
 ```
 The methods are de-coupled so that they can be unit tested (testability) or mocked individually, and also be reused for future purposes (reusability).
+
+## TODO
+
+1. Come up with a better way to check for legitamite ingredients such as "Salt" vs "Sal" in select_ingredients
+2. When liking the recipe for 4-Ingredient Dark Chocolate Fudgesicles, it seems to crash the API when retrieving the missing ingredients
