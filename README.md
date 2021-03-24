@@ -22,15 +22,15 @@ Run Spoonacular UI:
 Setup Spoonacular UI:
 
 Add your API key to your environment variables to keep it secure by entering the following command in your shell:
-
+```
 export API_KEY='<your key here>'
-
+```
 Alternatively you can place it in a bash file so you can just execute the file when needed or after a reboot:
-
+```
 #!/bin/sh
 
 export API_KEY='<your key here>'
-
+```
 The Spoonacular UI currently expects the API_KEY variable to be set as a environment variable. Alternatively, the API_KEY could be read from a file directly by the script, but that would require it to be added to .gitignore and be kept out of the source files.
 
 The code has several methods:
