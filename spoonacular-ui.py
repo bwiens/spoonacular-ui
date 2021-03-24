@@ -32,7 +32,7 @@ class SpoonacularUI(object):
             # make sure input is alphanumeric
             while not ingredient.isalpha():
                 ingredient = input(
-                    "Enter Ingredient (3-10 characters): " + str(i + 1) + " out of " + str(n) + " ")
+                        "Enter Ingredient (3-10 characters), " + str(i + 1) + " out of " + str(n) + ": ")
             # add the ingredient
             ingredients.append(ingredient)
         return ingredients
@@ -61,8 +61,9 @@ class SpoonacularUI(object):
         yes = {'y', 'ye', 'yes', }
         no = {'n', 'no'}
         satisfied = False
-        # check if user is satisfied or if recipe list has been exhausted
+        # present recipes and see if the user likes any
         for recipe in user_recipes:
+            # if the user is satisfied, exit the loop
             if satisfied:
                 break
             choice = ''
@@ -72,6 +73,7 @@ class SpoonacularUI(object):
                 # add missing ingredients and their missing amounts
                 for mi in recipe['missedIngredients']:
                     missing_ingredients['items'].append((mi['originalString']))
+            # check if the user is satisfied
             choice = input("Are you satisfied with your recipe selection? Type 'yes' or 'no'. ").lower()
             if choice in yes:
                 satisfied = True
@@ -84,19 +86,25 @@ class SpoonacularUI(object):
         parameters = {
             'apiKey': self.api_key
         }
+        # fetch the aisle locations and cost of each missing ingredient
         result = requests.post(self.api_url + 'mealplanner/shopping-list/compute',
                                headers=self.headers,
                                json=ingredients,
                                params=parameters)
         locations = result.json()
+        print()
         print("You are missing the following ingredients: ")
+        print("------------------------------------------")
+        # show the aisle locations
         for ingredient in (ingredients['items']):
             print(ingredient)
+        print()
         print("You can find the ingredients in the following aisles:")
+        print("-----------------------------------------------------")
         for aisle in locations['aisles']:
             for item in aisle["items"]:
                 print(item['name'] + ' - ' + item['aisle'])
-        # convert to dollar amount
+        # convert the total cost to dollar amount
         print('Estimated Total Cost: ' + '${:,.2f}'.format(locations['cost'] / 100))
 
 # create instance of SpoonacularUI class and call the de-coupled methods
