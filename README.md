@@ -53,3 +53,5 @@ The methods are de-coupled so that they can be unit tested (testability) or mock
 1. Come up with a better way to check for legitimate ingredients such as "Salt" vs "Sal" in select_ingredients.
 2. When liking the recipe for 4-Ingredient Dark Chocolate Fudgesicles, it seems to crash the API when calling mealplanner/shopping-list/compute for its missing ingredients -- come up with an error check for this.
 3. Add Unit Tests for the de-coupled methods.
+4. Add a successful API Connection test to check for Satus Code 200.
+5. Add a check for sufficient quota with Spoonacular.
