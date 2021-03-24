@@ -29,7 +29,8 @@ class SpoonacularUI(object):
         # retrieve ingredients the user already has
         for i in range(0, n):
             ingredient = ''
-            while len(ingredient) < 2 or len(ingredient) > 21:
+            # make sure input is alphanumeric
+            while not ingredient.isalpha():
                 ingredient = input(
                     "Enter Ingredient (3-10 characters): " + str(i + 1) + " out of " + str(n) + " ")
             # add the ingredient
