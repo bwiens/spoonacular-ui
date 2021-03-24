@@ -16,7 +16,7 @@ class SpoonacularUI(object):
         Gather ingredients from user input
         """
         ingredients = []
-        # determine number of ingredients the user already has, must be between 1 and 20
+        # determine number of ingredients the user already has, must be between 1 and 10
         n = 0
         while True:
             try:
@@ -26,10 +26,10 @@ class SpoonacularUI(object):
                 continue
             if 0 < n < 11:
                 break
-        # retrieve ingredients the user already has
+        # retrieve specified number of ingredients the user already has
         for i in range(0, n):
             ingredient = ''
-            # make sure input is alphanumeric
+            # make sure the ingredient input is alphanumeric
             while not ingredient.isalpha():
                 ingredient = input(
                         "Enter Ingredient (3-10 characters), " + str(i + 1) + " out of " + str(n) + ": ")
@@ -61,7 +61,7 @@ class SpoonacularUI(object):
         yes = {'y', 'ye', 'yes', }
         no = {'n', 'no'}
         satisfied = False
-        # present recipes and see if the user likes any
+        # present recipes and see if the user likes any of them
         for recipe in user_recipes:
             # if the user is satisfied, exit the loop
             if satisfied:
