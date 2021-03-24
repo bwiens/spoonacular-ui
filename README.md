@@ -1,23 +1,23 @@
 # spoonacular-ui
 Command line user interface for the Spoonacular API
 
-#User Documentation
-
 Description:
 
 This is a command-line user interface for the Spoonacular API. You can enter ingredients that you already have, 
 and it will suggest recipes to you. You can then like a recipe, which will then compile a list of the missing ingredients for this recipe. After the recipe selection process, the missing ingredients, along with their aisle locations and total cost will be shown.
 
+# User Documentation
 
 Run Spoonacular UI:
 
+0. Make sure the API key has been setup (see technical documentation) 
 1. Execute the file './spoonacular_ui.py' (you might have to make it executable with 'chmod +x spoonacular_ui.py')
 2. Enter the number of ingredients you already have
 3. Enter the ingredients 
 4. Like recipes you want to later utilize 
 5. Finish the recipe selection process by entering that you are satisfied
 
-#Technical Documentation
+# Technical Documentation
 
 Setup Spoonacular UI:
 
