@@ -22,8 +22,9 @@ Setup Spoonacular UI:
 Install the following Python libraries:
 
 ```
-os
-requests
+sys (to check if the API Key has been set)
+os (to load the API Key from the environment)
+requests (to call the Spoonacular API)
 ```
 
 Add your API key to your environment variables to keep it secure by entering the following command in your shell:
