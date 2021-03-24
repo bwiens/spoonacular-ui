@@ -44,5 +44,5 @@ The methods are de-coupled so that they can be unit tested (testability) or mock
 
 ## TODO
 
-1. Come up with a better way to check for legitamite ingredients such as "Salt" vs "Sal" in select_ingredients
-2. When liking the recipe for 4-Ingredient Dark Chocolate Fudgesicles, it seems to crash the API when retrieving the missing ingredients
+1. Come up with a better way to check for legitimate ingredients such as "Salt" vs "Sal" in select_ingredients.
+2. When liking the recipe for 4-Ingredient Dark Chocolate Fudgesicles, it seems to crash the API when calling mealplanner/shopping-list/compute for its missing ingredients -- come up with an error check for this.
