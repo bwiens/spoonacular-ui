@@ -98,10 +98,9 @@ class SpoonacularUI(object):
         # convert to dollar amount
         print('Estimated Total Cost: ' + '${:,.2f}'.format(locations['cost'] / 100))
 
-
+# create instance of SpoonacularUI class and call the de-coupled methods
 sp = SpoonacularUI()
 user_ingredients = sp.select_ingredients()
 spoon_recipes = sp.retrieve_recipes(user_ingredients)
 m_ingredients = sp.determine_missing_ingredients(spoon_recipes)
 sp.display_cost_location(m_ingredients)
-
