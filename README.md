@@ -1,5 +1,5 @@
 # spoonacular-ui
-Command line user interface for the Spoonacular API
+Command line user interface for the [Spoonacular API](https://spoonacular.com/food-api/)
 
 Description:
 
