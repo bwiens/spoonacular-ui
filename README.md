@@ -6,7 +6,7 @@ Description:
 This is a command-line user interface for the Spoonacular API. You can enter ingredients that you already have, 
 and it will suggest recipes to you. You can then like a recipe, which will then compile a list of the missing ingredients for this recipe. After the recipe selection process, the missing ingredients, along with their aisle locations and total cost will be shown.
 
-# User Documentation
+## User Documentation
 
 Run Spoonacular UI:
 
@@ -17,7 +17,7 @@ Run Spoonacular UI:
 4. Like recipes you want to later utilize 
 5. Finish the recipe selection process by entering that you are satisfied
 
-# Technical Documentation
+## Technical Documentation
 
 Setup Spoonacular UI:
 
@@ -34,10 +34,10 @@ export API_KEY='<your key here>'
 The Spoonacular UI currently expects the API_KEY variable to be set as a environment variable. Alternatively, the API_KEY could be read from a file directly by the script, but that would require it to be added to .gitignore and be kept out of the source files.
 
 The code has several methods:
-
+```
 select_ingredients
 retrieve_recipes
 determine_missing_ingredients
 display_cost_location
-
+```
 The methods are de-coupled so that they can be unit tested (testability) or mocked individually, and also be reused for future purposes (reusability).
